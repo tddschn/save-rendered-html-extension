@@ -4,7 +4,6 @@
   "version": "1.0",
   "description": "A Chrome extension that saves the fully rendered HTML of the current tab.",
   "permissions": [
-    "activeTab",
     "downloads"
   ],
   "action": {
@@ -15,10 +14,6 @@
   },
   "icons": {
     "48": "icon48.png"
-  },
-  "background": {
-    "service_worker": "background.js",
-    "type": "module"
   },
   "content_scripts": [
     {
