@@ -5,7 +5,8 @@
   "description": "A Chrome extension that saves the fully rendered HTML of the current tab.",
   "permissions": [
     "activeTab",
-    "downloads"
+    "downloads",
+    "scripting"
   ],
   "action": {
     "default_popup": "popup.html",
