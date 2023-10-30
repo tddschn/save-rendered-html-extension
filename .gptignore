@@ -1,0 +1,4 @@
+.gptignore
+output.txt
+**/*.png
+*.png
