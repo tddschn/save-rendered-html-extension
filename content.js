@@ -1,17 +1,20 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "getHtml") {
     const renderedHtml = document.documentElement.outerHTML;
-    const fileName = `rendered_html_${new Date().toISOString().replace(/[:.]/g, "-")}.html`;
+    const title = document.title;
+    const url = window.location.href;
+    const sanitizedTitle = title.replace(/[\\/:*?"<>|]/g, '_');
+    const fileName = `${sanitizedTitle}__${encodeURIComponent(url)}.html`;
 
     const blob = new Blob([renderedHtml], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
+    const urlObj = URL.createObjectURL(blob);
 
     chrome.downloads.download({
-      url: url,
+      url: urlObj,
       filename: fileName,
       saveAs: true,
     }, () => {
-      URL.revokeObjectURL(url);
+      URL.revokeObjectURL(urlObj);
     });
   }
 });

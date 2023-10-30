@@ -7,20 +7,21 @@ document.getElementById("saveHtmlBtn").addEventListener("click", async () => {
       function: getRenderedHtml,
     });
 
-    const renderedHtml = result[0].result;
-    const fileName = `rendered_html_${new Date().toISOString().replace(/[:.]/g, "-")}.html`;
+    const { renderedHtml, title, url } = result[0].result;
+    const sanitizedTitle = title.replace(/[\\/:*?"<>|]/g, '_');
+    const fileName = `${sanitizedTitle}__${encodeURIComponent(url)}.html`;
 
     const blob = new Blob([renderedHtml], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
+    const urlObj = URL.createObjectURL(blob);
 
     chrome.downloads.download(
       {
-        url: url,
+        url: urlObj,
         filename: fileName,
         saveAs: true,
       },
       () => {
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(urlObj);
       }
     );
   } catch (error) {
@@ -29,5 +30,9 @@ document.getElementById("saveHtmlBtn").addEventListener("click", async () => {
 });
 
 function getRenderedHtml() {
-  return document.documentElement.outerHTML;
+  return {
+    renderedHtml: document.documentElement.outerHTML,
+    title: document.title,
+    url: window.location.href
+  };
 }
