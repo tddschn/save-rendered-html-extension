@@ -1,0 +1,17 @@
+{
+  "name": "save-rendered-html-extension",
+  "version": "1.0.0",
+  "description": "Save Rendered HTML Chrome Extension ===================================",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Teddy Xinyuan Chen <45612704+tddschn@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.248"
+  }
+}

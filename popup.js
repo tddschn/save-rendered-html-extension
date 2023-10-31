@@ -8,9 +8,11 @@ async function saveHtml() {
     });
 
     const { renderedHtml, title, url } = result[0].result;
-    const sanitizedTitle = title.replace(/[\\/:*?"<>|]/g, '_');
+    const sanitizedTitle = title.replace(/[\\/:*?"<>|]/g, "_");
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const fileName = `rendered_html_${timestamp}_${sanitizedTitle}__${encodeURIComponent(url)}.html`;
+    const fileName = `rendered_html_${timestamp}_${sanitizedTitle}__${btoa(
+      url
+    )}.html`;
 
     const blob = new Blob([renderedHtml], { type: "text/html" });
     const urlObj = URL.createObjectURL(blob);
@@ -34,7 +36,7 @@ function getRenderedHtml() {
   return {
     renderedHtml: document.documentElement.outerHTML,
     title: document.title,
-    url: window.location.href
+    url: window.location.href,
   };
 }
 
