@@ -1,4 +1,4 @@
-document.getElementById("saveHtmlBtn").addEventListener("click", async () => {
+async function saveHtml() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
   try {
@@ -28,7 +28,7 @@ document.getElementById("saveHtmlBtn").addEventListener("click", async () => {
   } catch (error) {
     console.error("Error executing script:", error);
   }
-});
+}
 
 function getRenderedHtml() {
   return {
@@ -37,3 +37,6 @@ function getRenderedHtml() {
     url: window.location.href
   };
 }
+
+// Call the function immediately
+saveHtml();
