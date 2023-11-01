@@ -8,7 +8,7 @@ async function saveHtml() {
     });
 
     const { renderedHtml, title, url } = result[0].result;
-    const sanitizedTitle = title.replace(/[\\/:*?"<>|]/g, "_");
+    const sanitizedTitle = title.replace(/[\\/:*?"<>|]/g, "-");
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
     const fileName = `rendered_html_${timestamp}_${sanitizedTitle}__${btoa(
       url
