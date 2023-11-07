@@ -29,15 +29,15 @@ Usage
 
 The file will be named `rendered_html_<timestamp>.html`, where `<timestamp>` is the current date and time in ISO 8601 format.
 
-Files
------
+<!-- Files -->
+<!-- ----- -->
+<!---->
+<!-- *   `manifest.json`: The extension's manifest file that provides metadata and configuration. -->
+<!-- *   `popup.html`: The HTML file for the extension's popup. -->
+<!-- *   `popup.js`: The JavaScript file for the extension's popup, which handles button click events and communicates with the content script. -->
+<!-- *   `icon48.png`: A 48x48 pixel icon for the extension. -->
 
-*   `manifest.json`: The extension's manifest file that provides metadata and configuration.
-*   `popup.html`: The HTML file for the extension's popup.
-*   `popup.js`: The JavaScript file for the extension's popup, which handles button click events and communicates with the content script.
-*   `icon48.png`: A 48x48 pixel icon for the extension.
-
-License
--------
-
-This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
+<!-- License -->
+<!-- ------- -->
+<!---->
+<!-- This project is released under the MIT License. See the [LICENSE](LICENSE) file for details. -->
