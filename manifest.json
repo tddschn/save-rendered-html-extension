@@ -1,13 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Save Rendered HTML",
-  "version": "1.0",
+  "version": "1.1.1",
   "description": "A Chrome extension that saves the fully rendered HTML of the current tab.",
-  "permissions": [
-    "activeTab",
-    "downloads",
-    "scripting"
-  ],
+  "permissions": ["activeTab", "downloads", "scripting"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
