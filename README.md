@@ -1,6 +1,8 @@
 Save Rendered HTML Chrome Extension
 ===================================
 
+![Icon](icon128.png)
+
 This Chrome extension allows you to save the fully rendered HTML of the current tab by clicking a button in the extension's popup.
 
 Features
@@ -8,6 +10,11 @@ Features
 
 *   Save the fully rendered HTML of the current tab as a file
 *   Automatically generates a timestamped file name for the saved HTML
+
+Demo
+----
+
+<iframe width="1280" height="519" src="https://www.youtube.com/embed/l-BVjc774sc" title="save rendered html chrome extension demo v1.1.1 20231107" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Installation
 ------------
@@ -28,6 +35,12 @@ Usage
 3.  Click the "Save HTML" button to download the fully rendered HTML of the current tab as a file.
 
 The file will be named `rendered_html_<timestamp>.html`, where `<timestamp>` is the current date and time in ISO 8601 format.
+
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot-1.png)
+![Screenshot 2](screenshots/screenshot-2.png)
+![Screenshot 3](screenshots/screenshot-3.png)
 
 <!-- Files -->
 <!-- ----- -->
