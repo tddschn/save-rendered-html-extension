@@ -1,3 +1,4 @@
+*.zip
 test-input
 output.txt
 # .gptignore
