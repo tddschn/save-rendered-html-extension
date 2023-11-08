@@ -28,6 +28,13 @@ def get_args():
         help="Path(s) to rendered html file(s)",
     )
 
+    parser.add_argument(
+        "-t",
+        "--title-only",
+        help="Extract title only, output 1 title per line",
+        action="store_true",
+    )
+
     return parser.parse_args()
 
 
@@ -43,6 +50,10 @@ def main():
             **extract_fields_from_rendered_html_filename(p.name),  # type: ignore
         }
         l.append(d)
+    if args.title_only:
+        for d in l:
+            print(d["title"])
+        return
     print(json.dumps(l, indent=2, ensure_ascii=False))
 
 
