@@ -32,4 +32,4 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   }
 });
 
-export { handleMessage };
+// export { handleMessage };
