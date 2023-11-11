@@ -14,4 +14,7 @@ clean:
 	[[ -f $(EXTENSION_NAME)-$(VERSION).zip ]] && rm -v $(EXTENSION_NAME)-$(VERSION).zip || echo "No $(EXTENSION_NAME)-$(VERSION).zip to remove."
 	# @rm -v $(EXTENSION_NAME)-$(VERSION).zip
 
-.PHONY: package list clean
+clean-reserved-files:
+	fd -HI __pycache__ -x rm -r {}
+
+.PHONY: package list clean clean-reserved-files
