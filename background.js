@@ -17,9 +17,10 @@ async function handleMessage(message, sender, sendResponse) {
 // Register context menu
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
-    id: "save-html-without-scripts",
-    title: "Save HTML without <script> tags",
-    contexts: ["all"],
+    id: "save-html-without-scripts", // The unique ID for the menu item
+    title: "Save HTML without <script> tags", // The text to be displayed
+    // contexts: ["page"], // Specifies the context in which the menu item will appear; 'page' means it will show in the page context menu
+    // documentUrlPatterns: ["http://*/*", "https://*/*"], // Optional: patterns specifying the URLs where the menu item will appear
   });
 });
 
