@@ -56,3 +56,7 @@ The file will be named `rendered_html_<timestamp>.html`, where `<timestamp>` is 
 <!-- ------- -->
 <!---->
 <!-- This project is released under the MIT License. See the [LICENSE](LICENSE) file for details. -->
+
+## Troubleshooting
+
+If the system's save file prompt doesn't appear when you click on the extension icon, try restarting Chrome. Reloading the extension (in dev mode) won't work.
